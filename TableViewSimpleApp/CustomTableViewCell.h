@@ -10,4 +10,10 @@
 
 @interface CustomTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel *labelName;
+@property (nonatomic, strong) UILabel *labelDescription;
+@property (nonatomic, strong) UILabel *labelDate;
+@property (nonatomic, strong) UIImageView *myImageView;
+
+
 @end

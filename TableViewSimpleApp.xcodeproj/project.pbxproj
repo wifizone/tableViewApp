@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		A654325D1FE6A9E50048789B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A654325C1FE6A9E50048789B /* AppDelegate.m */; };
 		A65432601FE6A9E50048789B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A654325F1FE6A9E50048789B /* ViewController.m */; };
-		A65432631FE6A9E50048789B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65432611FE6A9E50048789B /* Main.storyboard */; };
 		A65432651FE6A9E50048789B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65432641FE6A9E50048789B /* Assets.xcassets */; };
-		A65432681FE6A9E50048789B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65432661FE6A9E50048789B /* LaunchScreen.storyboard */; };
 		A654326B1FE6A9E50048789B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A654326A1FE6A9E50048789B /* main.m */; };
+		A65432731FE6ABF10048789B /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A65432721FE6ABF10048789B /* CustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +20,11 @@
 		A654325C1FE6A9E50048789B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A654325E1FE6A9E50048789B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A654325F1FE6A9E50048789B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A65432621FE6A9E50048789B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A65432641FE6A9E50048789B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A65432671FE6A9E50048789B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A65432691FE6A9E50048789B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A654326A1FE6A9E50048789B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A65432711FE6ABF10048789B /* CustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		A65432721FE6ABF10048789B /* CustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +61,11 @@
 				A654325C1FE6A9E50048789B /* AppDelegate.m */,
 				A654325E1FE6A9E50048789B /* ViewController.h */,
 				A654325F1FE6A9E50048789B /* ViewController.m */,
-				A65432611FE6A9E50048789B /* Main.storyboard */,
 				A65432641FE6A9E50048789B /* Assets.xcassets */,
-				A65432661FE6A9E50048789B /* LaunchScreen.storyboard */,
 				A65432691FE6A9E50048789B /* Info.plist */,
 				A654326A1FE6A9E50048789B /* main.m */,
+				A65432711FE6ABF10048789B /* CustomTableViewCell.h */,
+				A65432721FE6ABF10048789B /* CustomTableViewCell.m */,
 			);
 			path = TableViewSimpleApp;
 			sourceTree = "<group>";
@@ -129,9 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A65432681FE6A9E50048789B /* LaunchScreen.storyboard in Resources */,
 				A65432651FE6A9E50048789B /* Assets.xcassets in Resources */,
-				A65432631FE6A9E50048789B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,30 +141,12 @@
 			files = (
 				A65432601FE6A9E50048789B /* ViewController.m in Sources */,
 				A654326B1FE6A9E50048789B /* main.m in Sources */,
+				A65432731FE6ABF10048789B /* CustomTableViewCell.m in Sources */,
 				A654325D1FE6A9E50048789B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		A65432611FE6A9E50048789B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A65432621FE6A9E50048789B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A65432661FE6A9E50048789B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A65432671FE6A9E50048789B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A654326C1FE6A9E50048789B /* Debug */ = {
@@ -281,6 +260,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62L77NG4AA;
 				INFOPLIST_FILE = TableViewSimpleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Anton.TableViewSimpleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,6 +275,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62L77NG4AA;
 				INFOPLIST_FILE = TableViewSimpleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Anton.TableViewSimpleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
