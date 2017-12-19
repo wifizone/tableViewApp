@@ -12,6 +12,7 @@
 		A65432651FE6A9E50048789B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65432641FE6A9E50048789B /* Assets.xcassets */; };
 		A654326B1FE6A9E50048789B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A654326A1FE6A9E50048789B /* main.m */; };
 		A65432731FE6ABF10048789B /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A65432721FE6ABF10048789B /* CustomTableViewCell.m */; };
+		A6BBC2C61FE9764700D1DD58 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6BBC2C51FE9764700D1DD58 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A654326A1FE6A9E50048789B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A65432711FE6ABF10048789B /* CustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		A65432721FE6ABF10048789B /* CustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		A6BBC2C51FE9764700D1DD58 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 		A654324F1FE6A9E50048789B = {
 			isa = PBXGroup;
 			children = (
+				A6BBC2C51FE9764700D1DD58 /* Default-568h@2x.png */,
 				A654325A1FE6A9E50048789B /* TableViewSimpleApp */,
 				A65432591FE6A9E50048789B /* Products */,
 			);
@@ -129,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65432651FE6A9E50048789B /* Assets.xcassets in Resources */,
+				A6BBC2C61FE9764700D1DD58 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

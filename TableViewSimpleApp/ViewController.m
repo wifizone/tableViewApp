@@ -14,6 +14,8 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;
 @property (nonatomic, strong) UIButton *buttonAdd;
+@property (nonatomic, strong) UIButton *buttonDelete;
+
 
 @end
 
@@ -43,7 +45,43 @@ static int imageWidth = 50;
 
 -(void)addEntry
 {
-    
+    NSMutableArray *newArray = [self.dataSource mutableCopy];
+    [newArray addObjectsFromArray:@[@{
+                                        @"Name":@"Anton",
+                                        @"Description": @"school",
+                                        @"Date":@"13.12.17"
+                                        }]];
+    self.dataSource = [newArray copy];
+    [self.tableView reloadData];
+}
+
+-(void)deleteEntry
+{
+    NSMutableArray *newArray = [self.dataSource mutableCopy];
+    if(newArray.count > 0)
+    {
+        [newArray removeObjectAtIndex:0];
+    }
+    self.dataSource = [newArray copy];
+    [self.tableView reloadData];
+}
+
+- (void)createButtonAdd {
+    self.buttonAdd = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.buttonAdd addTarget:self action:@selector(addEntry) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonAdd.frame = CGRectMake(15, 30, 50, 20);
+    [self.buttonAdd setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.buttonAdd setTitle:@"Add" forState:UIControlStateNormal ];
+    [self.view addSubview:self.buttonAdd];
+}
+
+- (void)createButtonDelete {
+    self.buttonDelete = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.buttonDelete addTarget:self action:@selector(deleteEntry) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonDelete.frame = CGRectMake(80, 30, 70, 20);
+    [self.buttonDelete setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.buttonDelete setTitle:@"Delete" forState:UIControlStateNormal ];
+    [self.view addSubview:self.buttonDelete];
 }
 
 - (void)viewDidLoad {
@@ -53,13 +91,8 @@ static int imageWidth = 50;
     self.view.backgroundColor = [UIColor whiteColor];
     [self createTableView] ;
     
-    self.buttonAdd = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.buttonAdd addTarget:self action:@selector(addEntry) forControlEvents:UIControlEventTouchUpInside];
-    self.buttonAdd.frame = CGRectMake(15, 30, 50, 20);
-    [self.buttonAdd setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [self.buttonAdd setTitle:@"Add" forState:UIControlStateNormal ];
-    [self.view addSubview:self.buttonAdd];
-    
+    [self createButtonAdd];
+    [self createButtonDelete];
     
     
     
@@ -88,6 +121,7 @@ static int imageWidth = 50;
     cell.labelName.text = object[@"Name"];
     cell.labelDescription.text = object[@"Description"];
     cell.labelDate.text = object[@"Date"];
+    cell.myImageView.image = [UIImage imageNamed:@"ok.png"];
     
     return cell;
 }
