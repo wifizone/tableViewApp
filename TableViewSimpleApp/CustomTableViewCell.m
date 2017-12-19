@@ -10,16 +10,25 @@
 
 static int offset = 15;
 static int imageWidth = 50;
+static int labelHeight = 10;
+static int labelWidth = 110;
 
 
-@implementation CustomTableViewCell
+@implementation CustomTableViewCell 
+
+
 
 -(void)layoutSubviews
 {
     [super layoutSubviews];
     self.myImageView.frame = CGRectMake(offset, offset, imageWidth, imageWidth);
-    self.labelName.frame = CGRectMake(75, offset, 20, 110);
-    self.labelDescription.frame = CGRectMake(75, offset+40, 20, 110);
+    self.labelName.frame = CGRectMake(75, offset, labelWidth, labelHeight);
+    self.labelDescription.frame = CGRectMake(75, offset+2*labelHeight,labelWidth, labelHeight);
+    self.labelDate.frame = CGRectMake(75, offset + 4*labelHeight, labelWidth, labelHeight);
+    self.labelName.font = [UIFont systemFontOfSize:10];
+    self.labelDescription.font = [UIFont systemFontOfSize:10];
+    self.labelDate.font = [UIFont systemFontOfSize:10];
+    
 }
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -46,6 +55,8 @@ static int imageWidth = 50;
 
     // Configure the view for the selected state
 }
+
+
 
 
 

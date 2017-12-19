@@ -9,10 +9,11 @@
 #import "ViewController.h"
 #import "CustomTableViewCell.h"
 
-@interface ViewController () <UITableViewDataSource>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) UIButton *buttonAdd;
 
 @end
 
@@ -21,14 +22,11 @@ static int imageWidth = 50;
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+- (void)createTableView {
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
+    self.tableView.rowHeight = imageWidth + 2*offset;
     self.dataSource = @[@{
                             @"Name":@"Anton",
                             @"Description": @"school",
@@ -40,9 +38,31 @@ static int imageWidth = 50;
                             @"Date":@"13.12.17"
                             }
                         ];
+    [self.tableView registerClass: [CustomTableViewCell class] forCellReuseIdentifier:@"uniqueID"];
+}
+
+-(void)addEntry
+{
+    
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self createTableView] ;
+    
+    self.buttonAdd = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.buttonAdd addTarget:self action:@selector(addEntry) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonAdd.frame = CGRectMake(15, 30, 50, 20);
+    [self.buttonAdd setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.buttonAdd setTitle:@"Add" forState:UIControlStateNormal ];
+    [self.view addSubview:self.buttonAdd];
     
     
-    [self.tableView registerClass: [CustomTableViewCell class] forCellReuseIdentifier:@"uniqueID"] ;
+    
+    
 }
 
 
@@ -50,6 +70,7 @@ static int imageWidth = 50;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -63,7 +84,7 @@ static int imageWidth = 50;
 {
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"uniqueID"];
     NSDictionary *object = self.dataSource[indexPath.row];
-    
+
     cell.labelName.text = object[@"Name"];
     cell.labelDescription.text = object[@"Description"];
     cell.labelDate.text = object[@"Date"];
