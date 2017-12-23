@@ -12,7 +12,7 @@
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) UIButton *buttonAdd;
 @property (nonatomic, strong) UIButton *buttonDelete;
 
@@ -29,7 +29,7 @@ static int imageWidth = 50;
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.rowHeight = imageWidth + 2*offset;
-    self.dataSource = @[@{
+    self.dataSource = [NSMutableArray arrayWithArray: @[@{
                             @"Name":@"Anton",
                             @"Description": @"school",
                             @"Date":@"13.12.17"
@@ -39,32 +39,43 @@ static int imageWidth = 50;
                             @"Description": @"school",
                             @"Date":@"13.12.17"
                             }
-                        ];
+                                                       ]];
+    //[self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    
     [self.tableView registerClass: [CustomTableViewCell class] forCellReuseIdentifier:@"uniqueID"];
 }
 
 -(void)addEntry
 {
-    NSMutableArray *newArray = [self.dataSource mutableCopy];
-    [newArray addObjectsFromArray:@[@{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.dataSource addObjectsFromArray:@[@{
                                         @"Name":@"Anton",
                                         @"Description": @"school",
                                         @"Date":@"13.12.17"
                                         }]];
-    self.dataSource = [newArray copy];
-    [self.tableView reloadData];
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath]
+                          withRowAnimation:UITableViewRowAnimationLeft];
+    [self.tableView endUpdates];
 }
 
 -(void)deleteEntry
 {
-    NSMutableArray *newArray = [self.dataSource mutableCopy];
-    if(newArray.count > 0)
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+    if(self.dataSource.count > 0)
     {
-        [newArray removeObjectAtIndex:0];
+        [self.dataSource removeObjectAtIndex:0];
+        [self.tableView beginUpdates];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath]
+                              withRowAnimation:UITableViewRowAnimationRight];
+        [self.tableView endUpdates];
     }
-    self.dataSource = [newArray copy];
-    [self.tableView reloadData];
+    
+    
+    
 }
+
 
 - (void)createButtonAdd {
     self.buttonAdd = [UIButton buttonWithType:UIButtonTypeCustom];
