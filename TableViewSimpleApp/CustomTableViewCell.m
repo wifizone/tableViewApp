@@ -29,6 +29,7 @@ static int labelWidth = 110;
     self.labelDescription.font = [UIFont systemFontOfSize:10];
     self.labelDate.font = [UIFont systemFontOfSize:10];
     
+    
 }
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

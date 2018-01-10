@@ -40,7 +40,6 @@ static int imageWidth = 50;
                             @"Date":@"13.12.17"
                             }
                                                        ]];
-    //[self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
     
     [self.tableView registerClass: [CustomTableViewCell class] forCellReuseIdentifier:@"uniqueID"];
 }
@@ -135,6 +134,11 @@ static int imageWidth = 50;
     cell.myImageView.image = [UIImage imageNamed:@"ok.png"];
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 @end
